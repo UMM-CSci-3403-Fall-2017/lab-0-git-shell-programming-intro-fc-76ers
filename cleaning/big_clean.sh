@@ -4,7 +4,10 @@ tar_file=$1
 
 SCRATCH=$2
 
+MainDr=$(pwd)
 tar -xf $tar_file -C $SCRATCH
 
-grep -lrZ "DELETE ME!" . | xargs -0 rm -f --
 
+for j in $MainDr; do
+    grep -l "DELETE ME!" $j | xargs rm -f
+done
