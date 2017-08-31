@@ -11,3 +11,6 @@ tar -xf $tar_file -C $SCRATCH
 for j in $MainDr; do
     grep -l "DELETE ME!" $j | xargs rm -f
 done
+
+cd ..
+tar -zcf cleaned_$tar_file
